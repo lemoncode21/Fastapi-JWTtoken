@@ -64,4 +64,4 @@ async def login(request: RequestSchema, db: Session = Depends(get_db)):
 @router.get("/users", dependencies=[Depends(JWTBearer())])
 async def retrieve_all(db: Session = Depends(get_db)):
     _user = UsersRepo.retrieve_all(db, Users)
-    return ResponseSchema(code="200", status="Ok", message="Sucess retrieve data", result=_user).dict(exclude_none=True)
+    return ResponseSchema(code="200", status="Ok", message="Success retrieve data", result=_user).dict(exclude_none=True)
